@@ -1,13 +1,26 @@
 <template>
-  <RouterLink :aria-label="props.name" :to="props"> <slot /> </RouterLink>
+  <router-link class="router-link" :aria-label="props.name" :to="props.path">
+    <slot />
+  </router-link>
 </template>
 
 <script setup>
 /* eslint-disable vue/require-default-prop */
-import { defineProps, withDefaults } from 'vue-router';
+import { defineProps } from 'vue';
 
-const props = withDefaults(defineProps({ name: String, params: Object }), {
-  name: '',
-  params: () => ({}),
-});
+import { RouterLink } from 'vue-router';
+
+const props = defineProps({ name: String, path: String });
 </script>
+
+<style scoped>
+.router-link {
+  color: var(--white);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.active {
+  color: var(--orange);
+}
+</style>
