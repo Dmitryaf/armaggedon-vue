@@ -2,25 +2,26 @@
   <div>
     <app-header></app-header>
     <router-view></router-view>
+    <div>
+      <div v-for="item of asteroidsList" :key="item.name">
+        {{ item.name }}
+      </div>
+    </div>
   </div>
 </template>
 
-<script>
-import { getAsteroids } from '@/api/api';
+<script setup>
+import { onMounted } from 'vue';
 
-import AppHeader from '@/components/AppHeader.vue';
+import { useAsteroids } from './composable/useAsteroids';
 
-export default {
-  name: 'App',
-  components: {
-    AppHeader,
-  },
+import AppHeader from '@/components/AppHeader/AppHeader.vue';
 
-  async created() {
-    const data = await getAsteroids();
-    console.log('🚀 ~ file: App.vue:19 ~ created ~ data:', data);
-  },
-};
+const { asteroidsList, fetchAsteroids } = useAsteroids();
+
+onMounted(async () => {
+  await fetchAsteroids();
+});
 </script>
 
 <style></style>
