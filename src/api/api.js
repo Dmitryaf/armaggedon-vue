@@ -12,12 +12,7 @@ export const getAsteroids = async (startDate, endDate) => {
     ? endDate
     : covertDateFormat(currentDate.setDate(currentDay + 7), '-');
   try {
-    const apiUrl = `
-      https://api.nasa.gov/neo/rest/v1/feed
-      ?start_date=${startDate}
-      &end_date=${endDate}
-      &api_key=${API_KEY}`;
-
+    const apiUrl = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=${API_KEY}`;
     const asteroidsInfo = await axios.get(apiUrl);
     return convertApiData(asteroidsInfo?.data?.near_earth_objects);
   } catch ({ message }) {
