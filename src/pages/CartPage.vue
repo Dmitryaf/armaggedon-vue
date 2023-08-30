@@ -1,13 +1,7 @@
 <template>
-  <div>
-    Cart page
-  </div>
+  <div>Cart page</div>
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
-
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

@@ -1,17 +1,131 @@
 module.exports = {
   root: true,
   env: {
-    node: true
+    node: true,
   },
-  'extends': [
+  extends: [
     'plugin:vue/essential',
-    'eslint:recommended'
+    'plugin:vue/vue3-recommended',
+    'eslint:recommended',
+    'plugin:prettier/recommended',
   ],
+  plugins: ['prettier'],
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
   },
   rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        usePrettierrc: true,
+      },
+    ],
+    'no-shadow': [
+      'off',
+      {
+        builtinGlobals: false,
+      },
+    ],
+    'no-duplicate-imports': [
+      'error',
+      {
+        includeExports: true,
+      },
+    ],
+    'no-template-curly-in-string': 'error',
+    'block-scoped-var': 'error',
+    curly: ['error', 'all'],
+    eqeqeq: 'error',
+    'max-classes-per-file': ['error', 1],
+    'no-alert': 'error',
+    'no-else-return': [
+      'error',
+      {
+        allowElseIf: false,
+      },
+    ],
+    'no-implicit-coercion': 'error',
+    'no-labels': 'error',
+    'no-lone-blocks': 'error',
+    'no-multi-spaces': 'error',
+    'no-new': 'error',
+    'no-new-func': 'error',
+    'no-new-wrappers': 'error',
+    'no-return-await': 'error',
+    'no-self-compare': 'error',
+    'no-sequences': 'error',
+    'no-throw-literal': 'error',
+    'no-unused-expressions': 'error',
+    'no-useless-call': 'error',
+    'no-useless-concat': 'error',
+    'no-useless-return': 'error',
+    'prefer-promise-reject-errors': 'error',
+    radix: 'error',
+    'no-undefined': 'error',
+    'array-bracket-newline': [
+      'off',
+      {
+        multiline: true,
+      },
+    ],
+    'comma-dangle': 'off',
+    'comma-style': 'error',
+    'eol-last': 'error',
+    'key-spacing': 'error',
+    'keyword-spacing': 'error',
+    'new-parens': 'error',
+    'no-bitwise': 'warn',
+    'no-lonely-if': 'warn',
+    'no-multiple-empty-lines': 'error',
+    'no-nested-ternary': 'error',
+    'no-new-object': 'error',
+    'no-tabs': [
+      'error',
+      {
+        allowIndentationTabs: true,
+      },
+    ],
+    'no-trailing-spaces': 'error',
+    'no-unneeded-ternary': 'error',
+    'no-whitespace-before-property': 'error',
+    'object-curly-newline': 'error',
+    'object-curly-spacing': ['error', 'always'],
+    'semi-spacing': 'error',
+    'space-before-blocks': 'error',
+    'space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'always',
+        named: 'never',
+        asyncArrow: 'always',
+      },
+    ],
+    'space-in-parens': 'error',
+    'space-infix-ops': 'error',
+    'space-unary-ops': 'error',
+    'spaced-comment': ['error', 'always'],
+    'switch-colon-spacing': 'error',
+    'arrow-body-style': ['error', 'as-needed'],
+    'arrow-parens': ['error', 'as-needed'],
+    'arrow-spacing': 'error',
+    'no-useless-computed-key': 'error',
+    'no-useless-rename': 'error',
+    'object-shorthand': ['error', 'always'],
+    'prefer-arrow-callback': 'warn',
+    'prefer-destructuring': 'off',
+    'rest-spread-spacing': ['error', 'never'],
+    'sort-imports': 'off',
+    'template-curly-spacing': 'error',
+    'vue/html-self-closing': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-  }
-}
+    'vue/max-len': [
+      'error',
+      {
+        code: 120,
+        template: 80,
+        tabWidth: 2,
+      },
+    ],
+  },
+};
