@@ -1,14 +1,20 @@
 import axios from "axios";
 
-const API_KEY = 'JdZrMyQiNT5Zg1vwjiY2H2UCEWw8K7ZnTQdm8rww';
-const API_URL = `https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=${API_KEY}`;
+import { convertApiData, covertDateFormat } from "@/utils/utils";
 
-export const getAsteroids = async () => {
+const API_KEY = 'JdZrMyQiNT5Zg1vwjiY2H2UCEWw8K7ZnTQdm8rww';
+
+export const getAsteroids = async (startDate, endDate) => {
+  const currentDate = new Date();
+  const currentDay = currentDate.getDate();
+  startDate = startDate ? startDate : covertDateFormat(currentDate, '-');
+  endDate = endDate ? endDate : covertDateFormat(currentDate.setDate(currentDay + 7), '-');
   try {
-    const result = await axios.get(API_URL);
-    console.log("🚀 ~ file: api.js:8 ~ getAsteroids ~ result:", result)
+    const apiUrl = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=${API_KEY}`
+    const asteroidsInfo = await axios.get(apiUrl);
+    return convertApiData(asteroidsInfo?.data?.near_earth_objects);
     
-  } catch ( {message} ) {
-    // this.$log.error(message)
+  } catch ( { message } ) {
+      console.error(message);
   }
 }
