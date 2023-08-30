@@ -1,10 +1,17 @@
+
+/* @import url('normalize.css'); */
 @import url('fonts.css');
 @import url('variables.css');
+
+* {
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-size: var(--font-size);
   font-family: var(--main-font);
-  background: right top no-repeat url('../assets/img/earth.png') var(--black);
-  background-size: cover;
+  background: url('../assets/img/earth.png') var(--black) -700px 15% no-repeat;
+  background-size: contain;
   color: var(--white);
 }
