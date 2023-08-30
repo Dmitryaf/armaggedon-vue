@@ -6,12 +6,12 @@ import CartPage from '@/pages/CartPage.vue';
 const routes = [
   {
     path: '/asteroids',
-    name: 'asteroids',
+    name: 'Астеройды',
     component: AsteroidsPage,
   },
   {
     path: '/cart',
-    name: 'cart',
+    name: 'Корзина',
     component: CartPage,
   },
 ];
@@ -21,4 +21,4 @@ const router = createRouter({
   routes,
 });
 
-export default router;
+export { router, routes };
