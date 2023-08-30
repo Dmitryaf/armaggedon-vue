@@ -1,0 +1,19 @@
+/* Цвета */
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --orange: #F86600;
+  --light-orange: #F5DED9;
+ 
+}
+
+/* Шрифты */
+:root {
+  --main-font: Helvetica, Arial, sans-serif;
+  --title-font: Passion One, cursive;
+}
+
+/* Размеры */
+:root {
+  --font-size: 16px;
+}

@@ -1,0 +1,10 @@
+@import url('fonts.css');
+@import url('variables.css');
+
+body {
+  font-size: var(--font-size);
+  font-family: var(--main-font);
+  background: right top no-repeat url('../assets/img/earth.png') var(--black);
+  background-size: cover;
+  color: var(--white);
+}
