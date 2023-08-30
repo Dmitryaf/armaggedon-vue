@@ -1,0 +1,12 @@
+.navbar {
+  .navbar__nav {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  .navbar__item {
+    margin-right: 10px;
+  }
+}
