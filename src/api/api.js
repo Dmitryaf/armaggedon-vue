@@ -11,6 +11,7 @@ export const getAsteroids = async (startDate, endDate) => {
   endDate = endDate
     ? endDate
     : covertDateFormat(currentDate.setDate(currentDay + 7), '-');
+  console.log('🚀 ~ file: api.js:12 ~ getAsteroids ~ endDate:', endDate);
   try {
     const apiUrl = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=${API_KEY}`;
     const asteroidsInfo = await axios.get(apiUrl);

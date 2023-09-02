@@ -1,7 +1,11 @@
 <template>
-  <div>Asteroids page</div>
+  <div>
+    <asteroids-list></asteroids-list>
+  </div>
 </template>
 
-<script setup></script>
+<script setup>
+import AsteroidsList from '@/components/AsteroidsList/AsteroidsList.vue';
+</script>
 
 <style lang="scss" scoped></style>

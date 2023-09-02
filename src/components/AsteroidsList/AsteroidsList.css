@@ -1,0 +1,20 @@
+.asteroids-wapp {
+  display: flex;
+  justify-content: center;
+}
+
+.asteroids {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+
+  .asteroids__title {
+    font-size: var(--title-md-size);
+    margin-bottom: 15px;
+  }
+
+  .asteroids__switcher {
+    margin-bottom: 25px;
+  }
+}

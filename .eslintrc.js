@@ -56,6 +56,7 @@ module.exports = {
     'no-sequences': 'error',
     'no-throw-literal': 'error',
     'no-unused-expressions': 'error',
+    'no-unused-vars': 'warn',
     'no-useless-call': 'error',
     'no-useless-concat': 'error',
     'no-useless-return': 'error',

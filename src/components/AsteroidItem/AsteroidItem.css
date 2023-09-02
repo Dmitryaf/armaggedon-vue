@@ -1,0 +1,8 @@
+.asteroid {
+  display: flex;
+  flex-direction: column;
+  
+  .asteroid__arrow {
+    width: 100%;
+  }
+}

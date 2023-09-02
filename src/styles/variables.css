@@ -16,5 +16,7 @@
 /* Размеры */
 :root {
   --font-size: 16px;
-  --title-size: 32px;
+  --title-md-size: 28px;
+  --title-lg-size: 32px;
+  
 }

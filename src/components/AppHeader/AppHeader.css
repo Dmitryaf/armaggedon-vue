@@ -1,7 +1,6 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 15px;
 
   .header__info {
     max-width: 375px;
@@ -9,12 +8,12 @@
 
   .header__title {
     font-family: Passion One;
-    font-size: var(--title-size);
+    font-size: var(--title-lg-size);
     color: var(--orange);
     margin-bottom: 15px;
   }
 
   .header__phrase {
-    margin-bottom: 8px;
+    margin-bottom: 5px;
   }
 }
