@@ -1,6 +1,13 @@
 .asteroid {
   display: flex;
   flex-direction: column;
+
+  .asteroid__date {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+
+  }
   
   .asteroid__arrow {
     width: 100%;

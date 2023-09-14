@@ -5,6 +5,10 @@ import CartPage from '@/pages/CartPage.vue';
 
 const routes = [
   {
+    path: '/:pathMatch(.*)*',
+    redirect: '/asteroids',
+  },
+  {
     path: '/asteroids',
     name: 'Астеройды',
     component: AsteroidsPage,
@@ -20,5 +24,6 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 });
+router.replace({ path: '*', redirect: '/asteroids ' });
 
 export { router, routes };

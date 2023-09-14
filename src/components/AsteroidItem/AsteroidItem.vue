@@ -1,11 +1,11 @@
 <template>
   <div class="asteroid">
     <div class="asteroid__date">
-      {{ covertDateFormat(props.data.closeApproachDate, ' ', true) }}
+      {{ props.data.closeApproachDate }}
     </div>
     <div class="asteroid__info">
       <div class="asteroid__distance">
-        <span>{{ props.data.missDistance }} км</span>
+        <span>{{ props.data.missDistance.kilometers }} км</span>
         <img :src="arrow" alt="arrow" class="asteroid__arrow" />
       </div>
       <div class="asteroid__parameters"></div>
@@ -15,8 +15,6 @@
 
 <script setup>
 import { defineProps } from 'vue';
-
-import { covertDateFormat } from '@/utils/utils';
 
 import arrow from '@/assets/img/Arrow.svg';
 
